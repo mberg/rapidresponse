@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     (r'^new (.*)', "apps.sms.views.adding.MalawiNew"),
     (r'^cancel (.*)', "apps.sms.views.cancelling.MalawiCancel"),
     (r'^confirm (.*)', "apps.sms.views.confirming.MalawiConfirm"),
-    (r'^report (.*)', "apps.sms.views.reporting.MalawiReport")
+    (r'^report (.*)', "apps.sms.views.malnutrition_reporting.MalnutritionReport")
 )

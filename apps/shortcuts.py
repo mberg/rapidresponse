@@ -1,5 +1,6 @@
 from datetime import date, datetime, timedelta
 from django.db.models import ObjectDoesNotExist
+from malnutrition.sms.command import HandlerFailed
 
 DEBUG = False
 DEBUG = True
@@ -97,7 +98,18 @@ def has_access(request, zone=None, facility=None):
 
 def parser(text):
     """ This is the text format requested, which unfortunately strptime doesn't understand """
-    return date(year=int(text[4:8]),day=int(text[0:2]),month=int(text[2:4]))
+
+    # Define formats
+    formats = '%d%m%y', '%d%m%Y'
+    # For each format,
+    for format in formats:
+        try:
+            return datetime.strptime(text, format)
+        except ValueError:
+            pass
+    # We couldn't understand the date
+    raise HandlerFailed("Couldn't understand date: %s" % text)
+    
     
 def last_month():
     now = datetime.now()
