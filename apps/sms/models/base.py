@@ -30,7 +30,7 @@ class Facility(facility.Facility):
         return "/facility/%s/" % self.id
 
     def get_absolute_url(self):
-        return "/gmc/edit/%s/" % self.id
+        return "/clinic/edit/%s/" % self.id
     
 class Case(case.Case):
     """ A generic case or patient table """

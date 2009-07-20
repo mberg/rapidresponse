@@ -21,7 +21,7 @@ setup_environ(settings)
 from datetime import datetime, timedelta
 from apps.sms.models.base import ReportMalnutrition, Case, Zone, Facility
 from apps.sms.views.reporting import MalawiReport
-from apps.sms.views.adding import MalawiNew
+from apps.sms.views.adding import NewPatient
 from apps.sms.views.joining import MalawiJoin
 
 from random import choice
@@ -38,7 +38,7 @@ now = datetime.now()
 fm = FakeMessage("1234567")
 # this is Kaigwazanga, a GMC in the North Region > Rumphi Zone
 MalawiJoin(fm, "15 Andy McKay")()
-MalawiNew(fm, "50 15 M 19102008 123124124")()
+NewPatient(fm, "50 15 M 19102008 123124124")()
 muac = 130
 height = 100
 for x in range(0, 100):
@@ -52,7 +52,7 @@ for x in range(0, 100):
 fm = FakeMessage("1234560")
 # Mkanda > Kaigwazanga
 MalawiJoin(fm, "16 Andy McKay")()
-MalawiNew(fm, "51 16 M 19102008 123124124")()
+NewPatient(fm, "51 16 M 19102008 123124124")()
 muac = 12
 height = 90
 for x in range(0, 100):
@@ -67,7 +67,7 @@ fm = FakeMessage("999999")
 # this is Changata, a GMC in the Southeern Region > Thyolo
 
 MalawiJoin(fm, "126 Coulibaly Mariam")()
-MalawiNew(fm, "70 1201 M 19102008 123124124")()
+NewPatient(fm, "70 1201 M 19102008 123124124")()
 muac = 15
 height = 10
 for x in range(0, 100):
@@ -81,7 +81,7 @@ for x in range(0, 100):
 fm = FakeMessage("999299")
 # this is Changata, a GMC in the Southeern Region > Thyolo
 MalawiJoin(fm, "127 Coulibaly Mariam")()
-MalawiNew(fm, "71 1201 M 19102008 123124124")()
+NewPatient(fm, "71 1201 M 19102008 123124124")()
 muac = 15
 height = 30
 for x in range(0, 100):

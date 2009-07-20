@@ -34,7 +34,7 @@ class TestApp (TestScript):
     test_00_join = """
         # test joining as a user
         1234567 > JOIN 1202 Coulibaly Mariam 
-        1234567 < The GMC ID given does not exist.
+        1234567 < The Clinic ID given does not exist.
         
         1234567 > JOIN 1201 Coulibaly Mariam 
         1234567 < Name = Coulibaly Mariam, GMC = Salima 1201, Phone number = 1234567. If this is not correct, please re-register.

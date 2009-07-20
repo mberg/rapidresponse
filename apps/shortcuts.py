@@ -72,9 +72,9 @@ def has_access(request, zone=None, facility=None):
         log("National or Partner, access")
         return True
     
-    # gmc just to the facility only
-    if int(profile.role) == profile.GMC:
-        log("GMC user")
+    # clinic just to the facility only
+    if int(profile.role) == profile.CLINIC:
+        log("Clinic user")
         if facility and profile.facility == facility:
             log("Facility match, access")
             return True

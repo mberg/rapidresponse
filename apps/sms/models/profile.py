@@ -9,12 +9,12 @@ class Profile(models.Model):
     PARTNER = 1
     NATIONAL = 2
     DISTRICT = 3
-    GMC = 4
+    CLINIC = 4
     ROLES = (
         (PARTNER, _('Partner')),
         (NATIONAL, _('National')),
         (DISTRICT, _('District')),
-        (GMC, _('GMC')),
+        (CLINIC, _('Clinic')),
     )
     
     class Meta:

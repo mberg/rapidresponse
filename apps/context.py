@@ -7,14 +7,14 @@ def processor(self):
     if has_roles(user, ["partner", "national", "district"]):
         tabs.append({ "link": "/", "title": "National" })
         tabs.append({ "link": "/district/", "title": "District"})
-    if has_roles(user, ["partner", "national", "district", "gmc"]):
-        tabs.append({ "link": "/gmc/", "title": "GMC"})
+    if has_roles(user, ["partner", "national", "district", "clinic"]):
+        tabs.append({ "link": "/clinic/", "title": "Clinic"})
         tabs.append({ "link": "/child/", "title": "Child"})
         tabs.append({ "link": "/hsa/", "title": "HSA"})
     if has_roles(user, ["partner", "national", "district"]):
         tabs.append({ "link": "/setup/", "title": "Setup"})
     context = {
-        "site": { "title": "Malawi",
+        "site": { "title": "RapidResponse",
                   "tabs": tabs },
         "settings": settings,
     }
